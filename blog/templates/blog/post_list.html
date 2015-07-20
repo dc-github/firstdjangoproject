@@ -1,25 +1,11 @@
-<html>
-	<head>
-		<title>DONUTIFICATION</title>
-	</head>
-	<body>
-	<p>Hi there!</p>
-	<p>It works!</p>
-	
-	<div>
-		<h1><a href="">My First Project</a></h1>
-	</div>
+<div>
+	<h1><a href="/">Django First Project</a></h1>
+</div>
 
+{% for post in posts %}
 	<div>
-		<p>published: 07.17.2015, 04:43</p>
-		<h2><a href="">First Paragraph</a></h2>
-		<p>Let's Play Django with Python!</p>
+		<p>published: {{ post.published_date }}</p>
+		<h2><a href="">{{ post.title }}</a></h2>
+		<p>{{ post.text|linebreaks }}</p>
 	</div>
-
-	<div>
-		<p>published: 07.17.2015, 04:43</p>
-		<h2><a href="">It's a second paragraph.</a></h2>
-		<p>Can't think of any definition anymore!</p>
-	</div>
-	</body>
-</html>
+{% endfor %}
